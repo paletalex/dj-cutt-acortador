@@ -1,0 +1,35 @@
+{% extends 'cutter/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    .slider{
+    background: url('{% static "cutter/img/blu.jpg" %}');
+    height: 100vh;
+    background-size: cover;
+    background-position:center;
+    }
+    label{
+        display: none;
+    }
+</style>
+
+<div class="container-fluid d-flex justify-content-center align-items-center slider">
+
+
+    <div class="col-md-3 text-center">
+        <form action="" method="post">{% csrf_token %}
+    
+            {{form.as_p}}
+            <input class="btn btn-warning font-weight-bold text-dark" type="submit" value="cutter">
+        
+        </form>
+    </div>
+
+</div>
+
+{% endblock content %}
+
+
+    
