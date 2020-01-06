@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic.base import TemplateView
 from django.views.generic.detail import DetailView
 from .forms import LinkForm
@@ -26,5 +26,5 @@ class Home(TemplateView):
         
 class SuccessDeatil(DetailView):
     def get(self, request, key=None, *args, **kwargs):
-        url = ShortUrl.objects.get(key=key)
-        return redirect(url.link)
+        url = Link.objects.get(key=key)
+        return redirect(url.url)
