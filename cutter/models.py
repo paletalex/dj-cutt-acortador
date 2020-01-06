@@ -17,8 +17,8 @@ class Link(models.Model):
     def save(self, *args, **kwargs):
         if self.key is None or self.key == "":
             self.key = generate_unique_key(self)
-        # if not "http" in self.url:
-        #     self.url = "http://" + self.url
+        if not "http" in self.url:
+            self.url = "http://" + self.url
         super(Link, self).save(*args, **kwargs)
 
     class Meta:

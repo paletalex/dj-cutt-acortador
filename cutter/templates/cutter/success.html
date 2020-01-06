@@ -33,7 +33,7 @@
         <p class='lead '>{{object.url}}</p c>
         {% endif %}
         
-        <h3><a href="{%url 'success' object.key %}">{{request.build_absolute_uri}}{{object.key}}</a></h3>
+        <h3><a href="{%url 'success' object.key %}">http://{{object.key}}/</a></h3>
         <a href="{% url 'home' %}" class="btn btn-info font-weight-bold text-white mt-3">Regresar</a>
     </div>
         

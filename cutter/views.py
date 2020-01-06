@@ -26,5 +26,5 @@ class Home(TemplateView):
         
 class SuccessDeatil(DetailView):
     def get(self, request, key=None, *args, **kwargs):
-        url = Link.objects.get(key=key)
-        return redirect(url.url)
+        link = Link.objects.get(key=key)
+        return redirect(link.url)
